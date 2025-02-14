@@ -1,8 +1,7 @@
 
-title: My website
-
+title: Code with Pranjal
 # Your name to show in the footer
-author: Some Person
+author: Pranjal Kr Shukla
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -21,7 +20,7 @@ navbar-links:
 
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/assets/img/avatar-icon.png"
+avatar: "/assets/img/avatar-icon2.png"
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
 round-avatar: true
@@ -85,8 +84,8 @@ share-links-active:
   vk: false
 
 # How to display the link to your website in the footer
-# Ensure the URL is correct
-url-pretty: "https://pranjalkumar09.github.io"
+# Ensure the URL is correct 
+url-pretty: "pranjalkumar09.github.io"
 
 # Add the website title to the title of every page
 title-on-all-pages: true
@@ -152,7 +151,7 @@ footer-hover-col: "#17A2B8" # A teal accent for a modern touch
 
 #################################
 # --- Web Analytics Section --- #
-#################################
+################################# 
 
 # Fill in your Google Analytics tag ID (or "Measurement ID") to track your website usage
 #gtag: "G-XXXXXXXXXX"
