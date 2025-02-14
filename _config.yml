@@ -46,7 +46,7 @@ social-network-links:
   # whatsapp: 15551212
 #  medium: yourname
 #  reddit: yourname or r/yoursubreddit
- linkedin: https://www.linkedin.com/in/pranjalkumar09/
+  linkedin: https://www.linkedin.com/in/pranjalkumar09/
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
@@ -62,9 +62,9 @@ social-network-links:
 #  ORCID: your ORCID ID
 #  google-scholar: your google scholar
 #  discord: "invite_code" or "users/userid" or "invite/invite_code"
- kaggle: https://www.kaggle.com/pranfjalkrwef
+  kaggle: https://www.kaggle.com/pranfjalkrwef
 #  hackerrank: yourname
- gitlab: https://gitlab.com/coderkumarshukla
+  gitlab: https://gitlab.com/coderkumarshukla
 #  itchio: yourname
 #  untappd: yourname
 
@@ -75,23 +75,24 @@ rss-description: This website is a virtual proof that I'm awesome
 ###########################
 # --- General options --- #
 ###########################
-
 # Select which social network share links to show in posts
 share-links-active:
   twitter: true
   facebook: true
   linkedin: true
+  reddit: true  # Added Reddit for wider reach
+  whatsapp: true # Added WhatsApp for mobile sharing
   vk: false
 
 # How to display the link to your website in the footer
-# Remove this if you don't want a link in the footer
-url-pretty: "https://pranjalkumar09.github.io/.com"
+# Ensure the URL is correct
+url-pretty: "https://pranjalkumar09.github.io"
 
 # Add the website title to the title of every page
 title-on-all-pages: true
 
-# Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
-excerpt_length: 50
+# Excerpt word length - Keep excerpts concise and engaging
+excerpt_length: 40  # Reduced for better readability
 
 # Whether or not to show an excerpt for every blog post in the feed page
 feed_show_excerpt: true
@@ -103,12 +104,11 @@ feed_show_tags: true
 post_search: true
 
 # Add a button in the footer to edit the current page. Only works if your website is hosted on GitHub
-# edit_page_button: true
+edit_page_button: true  # Enabled for easier editing
 
 # Allow sub-menu items (second-level navigation menu items) to be longer than the top-level menu
-# If this setting is off, then long sub-menu words might get cut off
-# See https://github.com/daattali/beautiful-jekyll/issues/765 to understand the issue this setting can solve
-navbar-var-length: false
+# Prevents text from getting cut off in navigation
+navbar-var-length: true
 
 # The keywords to associate with your website, for SEO purposes
 #keywords: "my,list,of,keywords"
