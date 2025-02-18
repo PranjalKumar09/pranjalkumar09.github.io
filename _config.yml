@@ -226,7 +226,8 @@ category-id: DIC_kwDON21D8M4Cmzin
 mapping: pathname
 reactions-enabled: 1
 emit-metadata: 0
-theme: dark
+# theme: dark
+remote_theme: hydecorp/hydejack
 
 ################
 # --- Misc --- #
