@@ -1,4 +1,5 @@
 
+favicon: assets/img/avatar-icon2.ico
 title: Code with Pranjal
 # Your name to show in the footer
 author: Pranjal Kr Shukla
@@ -160,7 +161,7 @@ gtag: "G-90NYD4T8L2"
 #cloudflare_analytics: ""
 
 # Google Tag Manager ID
-#gtm: ""
+gtm: ""
 
 # Matomo (aka Piwik) Web statistics
 # Uncomment the following section to enable Matomo. The opt-out parameter controls
@@ -186,13 +187,13 @@ gtag: "G-90NYD4T8L2"
 #fb_comment_id: ""
 
 # To use CommentBox, sign up for a Project ID on https://commentbox.io
-#commentbox: "" # Project ID, e.g. "5694267682979840-proj"
+commentbox: "5702221006110720-proj" # Project ID, e.g. "5694267682979840-proj"
 
 # To use Utterances comments: (0) uncomment the following section, (1) fill in
 # "repository" (make sure the repository is public), (2) Enable Issues in your repository,
 # (3) Install the Utterances app in your repository https://github.com/apps/utterances
 # See more details about the parameters below at https://utteranc.es/
-utterances:
+# utterances: client.js
 repository: PranjalKumar09/pranjalkumar09.github.io
 issue-term: url   # Mapping between blog posts and GitHub issues
 remote_theme: pages-themes/minimal@v0.2.0
@@ -220,14 +221,12 @@ label: blog-comments # Label that will be assigned to GitHub Issues created by U
 # See more details about giscus and each of the following parameters at https://giscus.app
 #giscus:
 hostname: app
-repository: PranjalKumar09/pranjalkumar09.github.io
 repository-id: R_kgDON21D8A
 category: Announcements
 category-id: DIC_kwDON21D8M4Cmzin
 mapping: pathname
 reactions-enabled: 1
 emit-metadata: 0
-remote_theme: pages-themes/minimal@v0.2.0
 # remote_theme: hydecorp/hydejack
 
 ################
