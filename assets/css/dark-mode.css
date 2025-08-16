@@ -101,3 +101,6 @@
         font-size: 1.5rem;
     }
 }
+.dark-mode, .dark-mode a, .dark-mode .btn, .dark-mode .card {
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
