@@ -1,0 +1,98 @@
+/* ===== Custom Styles for Pranjal's Portfolio ===== */
+
+/* Fonts */
+body {
+  font-family: 'Inter', 'Open Sans', sans-serif;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+section.text-center img {
+  border: 4px solid #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+section.text-center h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+section.text-center p.lead {
+  font-size: 1.25rem;
+  color: #6c757d;
+}
+
+/* Section Titles */
+h2 {
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.card .card-title {
+  font-weight: 600;
+}
+.card i {
+  display: block;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 30px;
+  padding: 0.5rem 1.2rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Blog Preview */
+ul.list-unstyled h4 {
+  font-weight: 600;
+  color: #333;
+}
+ul.list-unstyled p.text-muted {
+  margin-bottom: 0.3rem;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h4 {
+  color: #fff;
+}
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #ddd;
+}
+body.dark-mode .btn-outline-primary {
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+body.dark-mode .btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}

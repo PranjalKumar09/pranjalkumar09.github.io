@@ -1,122 +1,117 @@
 ---
-layout: page
+layout: base
 ---
 
-{{ content }}
+{% include header.html type="home" %}
 
-{% assign posts = paginator.posts | default: site.posts %}
+<main class="container my-5">
 
-<!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
-<ul class="posts-list list-unstyled" role="list">
-  {% for post in posts %}
-  <li class="post-preview">
-    <article>
+  <!-- Hero Section -->
+  <section class="text-center mb-5">
+    <img src="/assets/img/profile.jpg" alt="Pranjal Kumar" class="rounded-circle shadow" width="150" height="150">
+    <h1 class="mt-3">{{ site.title }}</h1>
+    <p class="lead text-muted">{{ site.subtitle }}</p>
+    <div class="d-flex justify-content-center gap-3 mt-3">
+      <a href="/aboutme" class="btn btn-primary btn-lg"><i class="fas fa-user"></i> About Me</a>
+      <a href="/assets/resume.pdf" class="btn btn-outline-secondary btn-lg"><i class="fas fa-file-alt"></i> Resume</a>
+      <a href="https://github.com/pranjalkumar09" class="btn btn-dark btn-lg"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+  </section>
 
-      {%- capture thumbnail -%}
-        {% if post.thumbnail-img %}
-          {{ post.thumbnail-img }}
-        {% elsif post.cover-img %}
-          {% if post.cover-img.first %}
-            {{ post.cover-img[0].first.first }}
-          {% else %}
-            {{ post.cover-img }}
-          {% endif %}
-        {% else %}
-        {% endif %}
-      {% endcapture %}
-      {% assign thumbnail=thumbnail | strip %}
+  <!-- Portfolio / Projects -->
+  <section class="mb-5">
+    <h2 class="text-center mb-4">🚀 Featured Projects</h2>
+    <div class="row g-4">
+      <!-- Example Project Card -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body text-center">
+            <i class="fas fa-brain fa-2x text-primary mb-3"></i>
+            <h5 class="card-title">Machine Learning Projects</h5>
+            <p class="text-muted small">Credit Card Fraud, Heart Disease, Recommender System...</p>
+            <a href="/projects" class="btn btn-sm btn-outline-primary">View More</a>
+          </div>
+        </div>
+      </div>
+      <!-- Add more project cards here -->
+    </div>
+  </section>
 
-      {% if site.feed_show_excerpt == false %}
-      {% if thumbnail != "" %}
-      <div class="post-image post-image-normal">
-        <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
-          <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
+  <!-- Tools Section -->
+  <section class="mb-5">
+    <h2 class="text-center mb-4">🛠 Tools</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="card shadow-sm h-100 text-center">
+          <div class="card-body">
+            <i class="fas fa-palette fa-2x text-success mb-3"></i>
+            <h5 class="card-title">Color Picker</h5>
+            <a href="/tools/color-picker" class="btn btn-sm btn-primary">Open</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card shadow-sm h-100 text-center">
+          <div class="card-body">
+            <i class="fas fa-key fa-2x text-warning mb-3"></i>
+            <h5 class="card-title">Password Generator</h5>
+            <a href="/tools/password-generator" class="btn btn-sm btn-primary">Open</a>
+          </div>
+        </div>
+      </div>
+      <!-- Add more tool cards -->
+    </div>
+    <div class="text-center mt-3">
+      <a href="/tools" class="btn btn-outline-secondary">View All Tools</a>
+    </div>
+  </section>
+
+  <!-- Games Section -->
+  <section class="mb-5">
+    <h2 class="text-center mb-4">🎮 Games</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="card shadow-sm h-100 text-center">
+          <div class="card-body">
+            <i class="fas fa-gamepad fa-2x text-danger mb-3"></i>
+            <h5 class="card-title">Tetris</h5>
+            <a href="/games/tetris" class="btn btn-sm btn-primary">Play</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card shadow-sm h-100 text-center">
+          <div class="card-body">
+            <i class="fas fa-snake fa-2x text-success mb-3"></i>
+            <h5 class="card-title">Snake Game</h5>
+            <a href="/games/snake" class="btn btn-sm btn-primary">Play</a>
+          </div>
+        </div>
+      </div>
+      <!-- Add more game cards -->
+    </div>
+    <div class="text-center mt-3">
+      <a href="/games" class="btn btn-outline-secondary">View All Games</a>
+    </div>
+  </section>
+
+  <!-- Blog Preview -->
+  <section class="mb-5">
+    <h2 class="text-center mb-4">📝 Latest Blog Posts</h2>
+    <ul class="list-unstyled">
+      {% for post in site.posts limit:3 %}
+      <li class="mb-4">
+        <a href="{{ post.url | absolute_url }}" class="text-decoration-none">
+          <h4 class="mb-1">{{ post.title }}</h4>
         </a>
-      </div>
-      {% endif %}
-      {% endif %}
+        <p class="text-muted small">{{ post.date | date: "%B %-d, %Y" }}</p>
+        <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="text-center mt-3">
+      <a href="/blog" class="btn btn-outline-primary">View All Posts</a>
+    </div>
+  </section>
 
-      <a href="{{ post.url | absolute_url }}">
-        <h2 class="post-title">{{ post.title | strip_html }}</h2>
-
-        {% if post.subtitle %}
-          <h3 class="post-subtitle">
-          {{ post.subtitle | strip_html }}
-          </h3>
-        {% endif %}
-      </a>
-
-      {% if post.author %}
-        <span>By <strong>{{ post.author | strip_html }}</strong></span>
-      {% endif %}
-      <p class="post-meta">
-        {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
-        Posted on {{ post.date | date: date_format }}
-      </p>
-
-      {% if thumbnail != "" %}
-      <div class="post-image post-image-small">
-        <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
-          <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
-        </a>
-      </div>
-      {% endif %}
-
-      {% unless site.feed_show_excerpt == false %}
-      {% if thumbnail != "" %}
-      <div class="post-image post-image-short">
-        <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
-          <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
-        </a>
-      </div>
-      {% endif %}
-
-      <div class="post-entry">
-        {% assign excerpt_length = site.excerpt_length | default: 50 %}
-        {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
-        {% assign excerpt_word_count = post.excerpt | number_of_words %}
-        {% if post.content != post.excerpt or excerpt_word_count > excerpt_length %}
-          <a href="{{ post.url | absolute_url }}" class="post-read-more">[Read&nbsp;More]</a>
-        {% endif %}
-      </div>
-      {% endunless %}
-
-      {% if site.feed_show_tags != false and post.tags.size > 0 %}
-      <div class="blog-tags">
-        <span>Tags:</span>
-        <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
-        <ul class="d-inline list-inline" role="list">
-          {% for tag in post.tags %}
-          <li class="list-inline-item">
-            <a href="{{ '/tags' | absolute_url }}#{{- tag -}}">{{- tag -}}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% endif %}
-
-    </article>
-  </li>
-  {% endfor %}
-</ul>
-
-{% if paginator.total_pages > 1 %}
-<ul class="pagination main-pager">
-  {% if paginator.previous_page %}
-  <li class="page-item previous">
-    <a class="page-link" href="{{ paginator.previous_page_path | absolute_url }}">
-      <i class="fas fa-arrow-left" alt="Newer Posts"></i>
-      <span class="d-none d-sm-inline-block">Newer Posts</span>
-    </a>
-  </li>
-  {% endif %}
-  {% if paginator.next_page %}
-  <li class="page-item next">
-    <a class="page-link" href="{{ paginator.next_page_path | absolute_url }}">
-      <span class="d-none d-sm-inline-block">Older Posts</span>
-      <i class="fas fa-arrow-right" alt="Older Posts"></i>
-    </a>
-  </li>
-  {% endif %}
-</ul>
-{% endif %}
+</main>
